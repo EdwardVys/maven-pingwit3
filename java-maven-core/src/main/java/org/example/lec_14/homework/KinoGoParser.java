@@ -19,6 +19,10 @@ public class KinoGoParser {
         Elements tablKino = page.getElementsByAttributeValue("class", "zagolovki");
 
         System.out.println(tablKino);
+        /* tablKino если респечатать, то получается не очень красиво.
+        у tablKino можно вызвать метод tablKino.eachText();
+        который вернет лист фильмов, т.е. текст, который находится между >название фильма<
+        */
     }
 }
 //пока добрался только до уровня <h2.../h2>:   ссылки имени и года....вечером продолжу
