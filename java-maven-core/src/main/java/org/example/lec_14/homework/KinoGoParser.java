@@ -23,6 +23,16 @@ public class KinoGoParser {
         у tablKino можно вызвать метод tablKino.eachText();
         который вернет лист фильмов, т.е. текст, который находится между >название фильма<
         */
+        
+        /*
+        Ваш проект скорее всего не компилируется, добавьте в любой из pom.xml зависимость
+        
+         <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.14.3</version>
+        </dependency>
+        */
     }
 }
 //пока добрался только до уровня <h2.../h2>:   ссылки имени и года....вечером продолжу
