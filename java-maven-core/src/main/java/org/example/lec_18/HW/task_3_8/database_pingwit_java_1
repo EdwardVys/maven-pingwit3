@@ -26,6 +26,7 @@ task 5:
 
 ALTER TABLE student ALTER COLUMN course TYPE varchar(7);
 
+// а зачем скрипты ниже? Таблице же есть и вы в ней колонку изменили
 CREATE TABLE IF NOT EXISTS public.student
 (
     id bigint NOT NULL DEFAULT nextval('student_id_seq'::regclass),
@@ -35,15 +36,17 @@ CREATE TABLE IF NOT EXISTS public.student
     CONSTRAINT student_pkey PRIMARY KEY (id)
 )
 
+// Этот скрипт не нужен
 TABLESPACE pg_default;
 
+// Этот скрипт не нужен
 ALTER TABLE IF EXISTS public.student
     OWNER to postgres;
 
 task 6:
 
 update student
-set course='java-17' where course='8';
+set course='java-17' where course='8'; // ... where course LIKE '%8%';
 
 task 7:
 
@@ -51,6 +54,6 @@ insert into student (name, age, course) VALUES ('Egorka',2, 'java-17');
 
 task 8:
 
-select * from student where course like'java%' or course='55';
+select * from student where course like'java%' or course='55'; // like'%java%' - еще процент в начале должен быть чтобы попали данные вроде 17-Java, это на всякий случай
 
 */
