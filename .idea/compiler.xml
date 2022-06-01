@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="java-maven-core" />
         <module name="java-spring" />
+        <module name="demo" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
       <module name="java-maven-core" options="-parameters" />
       <module name="java-spring" options="-parameters" />
     </option>
