@@ -2,6 +2,7 @@ package pingwit.lec_24.classwork.controller;
 
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pingwit.lec_24.classwork.dto.HouseDto;
@@ -17,7 +18,7 @@ public class HouseController {
     }
 
     @PostMapping("/save")
-    public Long save(HouseDto dto) {
+    public Long save(@RequestBody HouseDto dto) {
         return houseService.save(dto);
     }
 

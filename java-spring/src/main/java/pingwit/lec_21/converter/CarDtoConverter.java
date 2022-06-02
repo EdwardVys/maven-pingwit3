@@ -10,7 +10,7 @@ public class CarDtoConverter {
         this.userConverter = userConverter;
     }
 
-    public CarDto convert(Car car){
+    public CarDto convert(Car car) {
         return new CarDto(car.name(), car.number());
 
     }

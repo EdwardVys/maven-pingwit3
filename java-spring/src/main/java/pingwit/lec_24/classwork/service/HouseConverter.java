@@ -6,7 +6,7 @@ import pingwit.lec_24.classwork.dto.HouseDto;
 import pingwit.lec_24.classwork.entity.House;
 
 @Component
-public class HouseConverter  {
+public class HouseConverter {
     public HouseDto toFront(House house) {
         return new HouseDto(house.getId(), house.getHouseType(), house.getFloor(), house.getEntrance());
     }

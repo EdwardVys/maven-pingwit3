@@ -16,11 +16,12 @@ public class HouseService {
         this.houseRepository = houseRepository;
         this.houseConverter = houseConverter;
     }
-public Long save(HouseDto dto){
-    House house = houseConverter.toLocal(dto);
 
-    return houseRepository.save(house).getId();
-}
+    public Long save(HouseDto dto) {
+        House house = houseConverter.toLocal(dto);
+
+        return houseRepository.save(house).getId();
+    }
 
 }
 

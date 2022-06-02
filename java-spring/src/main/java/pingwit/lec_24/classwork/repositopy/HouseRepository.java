@@ -6,7 +6,7 @@ import pingwit.lec_24.classwork.entity.HouseType;
 
 import java.util.List;
 
-public interface HouseRepository extends PagingAndSortingRepository<House,Long>{
+public interface HouseRepository extends PagingAndSortingRepository<House, Long> {
 
     List<House> findAllByHouseType(HouseType houseType);
 

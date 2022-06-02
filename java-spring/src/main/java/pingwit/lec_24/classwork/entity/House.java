@@ -14,7 +14,7 @@ public class House {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-@Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private HouseType houseType;
     private Integer floor;
     private Integer entrance;
