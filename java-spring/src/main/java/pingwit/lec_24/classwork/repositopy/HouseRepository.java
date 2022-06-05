@@ -14,5 +14,6 @@ public interface HouseRepository extends PagingAndSortingRepository<House, Long>
 
     List<House> findAllByHouseTypeAndIdIn(HouseType houseType, List<Long> ids);
 
-    List<House> findAllByFloorGreaterThanEqualOrderByIdDesc(Integer floor);
+    List<House> findAllByFloorGreaterThanOrderByIdDesc(Integer floor);
+
 }
