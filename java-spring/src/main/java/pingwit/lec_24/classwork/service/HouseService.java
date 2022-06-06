@@ -26,7 +26,7 @@ public class HouseService {
         House house = houseConverter.toLocal(dto);
         House savedHouse = houseRepository.save(house);
 
-        throwExeption();
+ //       throwExeption();
 
         return savedHouse.getId();
     }
@@ -34,7 +34,6 @@ public class HouseService {
     public List<HouseDto> findAllByHouseType(HouseType houseType) {
         List<House> allByHouseType = houseRepository.findAllByHouseType(houseType);
 
-// лишняя строка
         return allByHouseType.stream()
                 .map(houseConverter::toFront)
                 .toList();
@@ -43,7 +42,6 @@ public class HouseService {
     public List<HouseDto> findAllByIdIn(List<Long> ids) {
         List<House> findAllByIdIn = houseRepository.findAllByIdIn(ids);
 
-// лишняя строка
         return findAllByIdIn.stream()
                 .map(houseConverter::toFront)
                 .toList();

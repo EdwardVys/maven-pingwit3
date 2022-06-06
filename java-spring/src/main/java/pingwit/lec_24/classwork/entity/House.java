@@ -1,11 +1,6 @@
 package pingwit.lec_24.classwork.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class House {
@@ -18,6 +13,10 @@ public class House {
     private HouseType houseType;
     private Integer floor;
     private Integer entrance;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id",referencedColumnName = "id")
+    private Address address;
 
     public Long getId() {
         return id;
@@ -49,5 +48,13 @@ public class House {
 
     public void setEntrance(Integer entrance) {
         this.entrance = entrance;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

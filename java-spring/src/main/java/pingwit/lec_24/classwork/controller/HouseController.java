@@ -20,7 +20,6 @@ public class HouseController {
 
     @PostMapping("/save")
     public Long save(@RequestBody HouseDto dto) throws Exception {
-//лишняя строка
         return houseService.save(dto);
     }
 
