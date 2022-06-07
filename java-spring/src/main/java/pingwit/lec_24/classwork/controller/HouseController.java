@@ -2,6 +2,7 @@ package pingwit.lec_24.classwork.controller;
 
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
 import pingwit.lec_24.classwork.dto.HouseDto;
 import pingwit.lec_24.classwork.entity.HouseType;
 import pingwit.lec_24.classwork.service.HouseService;
@@ -21,6 +22,11 @@ public class HouseController {
     @PostMapping("/save")
     public Long save(@RequestBody HouseDto dto) throws Exception {
         return houseService.save(dto);
+    }
+
+    @GetMapping("/{id}")
+    public HouseDto findAllByHouseType(@PathVariable Long id) {
+        return houseService.findById(id);
     }
 
     @GetMapping("/type/{houseType}")

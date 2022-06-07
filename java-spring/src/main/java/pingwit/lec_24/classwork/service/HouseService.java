@@ -16,7 +16,12 @@ public class HouseService {
     private final HouseRepository houseRepository;
     private final HouseConverter houseConverter;
 
-    public HouseService(HouseRepository houseRepository, HouseConverter houseConverter) {
+
+    public HouseService(
+            HouseRepository houseRepository,
+            HouseConverter houseConverter,
+            ResidentConverter residentConverter
+    ) {
         this.houseRepository = houseRepository;
         this.houseConverter = houseConverter;
     }
@@ -26,9 +31,15 @@ public class HouseService {
         House house = houseConverter.toLocal(dto);
         House savedHouse = houseRepository.save(house);
 
- //       throwExeption();
+        //       throwExeption();
 
         return savedHouse.getId();
+    }
+
+    public HouseDto findById(Long id) {
+        return houseRepository.findById(id)
+                .map(houseConverter::toFront)
+                .orElse(null);
     }
 
     public List<HouseDto> findAllByHouseType(HouseType houseType) {

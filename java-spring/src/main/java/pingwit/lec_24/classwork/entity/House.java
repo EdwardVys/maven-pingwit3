@@ -1,6 +1,8 @@
 package pingwit.lec_24.classwork.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class House {
@@ -15,10 +17,22 @@ public class House {
     private Integer entrance;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id",referencedColumnName = "id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
+    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL)
+    private List<Elevator> elevators = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "house_id_resident_id",
+            joinColumns = @JoinColumn(name = "house_id"),
+            inverseJoinColumns = @JoinColumn(name = "resident_id")
+    )
+    private List<Resident> residents = new ArrayList<>();
+
     public Long getId() {
+
         return id;
     }
 
@@ -56,5 +70,21 @@ public class House {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public List<Elevator> getElevators() {
+        return elevators;
+    }
+
+    public void setElevators(List<Elevator> elevators) {
+        this.elevators = elevators;
+    }
+
+    public List<Resident> getResidents() {
+        return residents;
+    }
+
+    public void setResidents(List<Resident> residents) {
+        this.residents = residents;
     }
 }
