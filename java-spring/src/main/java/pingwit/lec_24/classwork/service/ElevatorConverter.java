@@ -16,7 +16,7 @@ public class ElevatorConverter {
         }
 
         Elevator elevator = new Elevator();
-
+// необязательный абзац, я бы убрал
         elevator.setProducer(dto.producer());
         elevator.setHouse(house);
 
@@ -51,5 +51,5 @@ public class ElevatorConverter {
                 .toList();
     }
 
-
+// лишняя строка
 }
