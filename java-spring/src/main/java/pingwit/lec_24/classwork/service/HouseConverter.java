@@ -30,7 +30,7 @@ public class HouseConverter {
         this.residentConverter = residentConverter;
     }
 
-
+// лишняя строка
     public HouseDto toFront(House house) {
         AddressDto addressDto = addressConverter.toFront(house.getAddress());
         List<ElevatorDto> elevatorDtos = elevatorConverter.toFront(house.getElevators());
