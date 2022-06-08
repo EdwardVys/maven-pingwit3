@@ -16,7 +16,7 @@ public class HouseService {
     private final HouseRepository houseRepository;
     private final HouseConverter houseConverter;
 
-
+// лишняя строка
     public HouseService(
             HouseRepository houseRepository,
             HouseConverter houseConverter,
