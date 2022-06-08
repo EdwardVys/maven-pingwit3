@@ -32,7 +32,7 @@ public class House {
     private List<Resident> residents = new ArrayList<>();
 
     public Long getId() {
-
+// лишняя строка
         return id;
     }
 
