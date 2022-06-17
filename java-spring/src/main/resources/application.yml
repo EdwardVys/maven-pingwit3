@@ -1,5 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/my_base_24
+    url: jdbc:postgresql://localhost:5432/my_base
     username: postgres
     password: docker
+  jpa:
+    show-sql: true
