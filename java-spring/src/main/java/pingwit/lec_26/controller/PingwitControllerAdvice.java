@@ -12,7 +12,6 @@ import java.nio.file.AccessDeniedException;
 public class PingwitControllerAdvice {
 
     @ExceptionHandler
-// лишняя строка
     public ResponseEntity<String> handle(AccessDeniedException e) {
         return ResponseEntity.status(HttpStatus.GATEWAY_TIMEOUT).body("Izvinite, polomalsya AccessDeniedException");
     }
