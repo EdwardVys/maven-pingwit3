@@ -12,7 +12,6 @@ import static org.mockito.Mockito.when;
 
 class BeerServiceTest {
 
-
     private final BeerDeliveryService beerDeliveryService = mock(BeerDeliveryService.class);
 
     private final BeerService subject = new BeerService(beerDeliveryService);

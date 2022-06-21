@@ -10,13 +10,12 @@ class BeerDeliveryServiceTest {
 
     @Test
     void deliveryBeer() {
-
         //Given
         Beer beer = Beer.PILSNER;
         Integer volume = 500;
         Integer amount = 10;
 
-        String expected = "500ml PILSNER 10 ";
+        String expected = "500ml PILSNER 10";
 
         //When
         String actual = subject.deliveryBeer(beer, volume, amount);

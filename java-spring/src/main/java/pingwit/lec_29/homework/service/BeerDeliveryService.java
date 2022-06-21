@@ -7,6 +7,6 @@ import pingwit.lec_29.homework.menu.Beer;
 public class BeerDeliveryService {
 
     public String deliveryBeer(Beer beer, Integer volume, Integer amount) {
-        return volume + "ml " + beer + " " + amount + " ";
+        return volume + "ml " + beer + " " + amount;
     }
 }
