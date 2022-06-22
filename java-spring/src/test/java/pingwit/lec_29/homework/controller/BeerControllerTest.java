@@ -40,7 +40,7 @@ class BeerControllerIT {
         MvcResult mvcResult = mockMvc.perform(order)
                 .andExpect(MockMvcResultMatchers.status().is2xxSuccessful())
                 .andReturn();
-        String expected = "1000ml KELLERBIER 10";
+        String expected = "1000ml KELLERBIER 10"; // String expected должен быть в секции //Given
         //Then
         Assertions.assertEquals(expected, mvcResult.getResponse().getContentAsString());
     }
