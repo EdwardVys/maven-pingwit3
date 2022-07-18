@@ -9,13 +9,12 @@ public class DetailedOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long orderId;
     private String diagnostics;
     private String spareParts;
     private Integer estimatedCost;
     private Integer estimatedDate;
     @OneToOne
-    @JoinColumn (name = "orderId")
+    @JoinColumn (name = "order_id")
     private Order order;
 
     @OneToOne(mappedBy = "detailedOrder")
@@ -27,14 +26,6 @@ public class DetailedOrder {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
     }
 
     public String getDiagnostics() {

@@ -7,7 +7,6 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long clientId;
     private String device;
     private String claimedDefect;
     private String orderDate;
@@ -25,14 +24,6 @@ public class Order {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
     }
 
     public String getDevice() {
